@@ -8,3 +8,23 @@
 14:15:35,323 TRACE BasicBinder:65 - binding parameter [1] as [VARCHAR] - [Message 4]
 14:15:35,325 DEBUG SQL:103 - insert into message (text) values (?)
 14:15:35,326 TRACE BasicBinder:65 - binding parameter [1] as [VARCHAR] - [Message 5]
+17:21:01,769 DEBUG SQL:103 - insert into message (text) values (?)
+17:21:01,780 TRACE BasicBinder:65 - binding parameter [1] as [VARCHAR] - [Hello world with Hibernate with annotation]
+13:17:31,474 DEBUG SQL:103 - insert into message (text) values (?)
+13:17:31,491 TRACE BasicBinder:65 - binding parameter [1] as [VARCHAR] - [Hello world with Hibernate with annotation]
+13:18:29,994 DEBUG SQL:103 - insert into message (text) values (?)
+13:18:30,006 TRACE BasicBinder:65 - binding parameter [1] as [VARCHAR] - [Hello world with Hibernate with annotation]
+10:58:22,952 DEBUG SQL:103 - select message0_.id as id1_0_0_, message0_.text as text2_0_0_ from message message0_ where message0_.id=?
+10:58:22,967 TRACE BasicBinder:65 - binding parameter [1] as [INTEGER] - [2]
+11:03:22,698 DEBUG SQL:103 - select message0_.id as id1_0_0_, message0_.text as text2_0_0_ from message message0_ where message0_.id=?
+11:03:22,714 TRACE BasicBinder:65 - binding parameter [1] as [INTEGER] - [3]
+11:03:45,817 DEBUG SQL:103 - select message0_.id as id1_0_0_, message0_.text as text2_0_0_ from message message0_ where message0_.id=?
+11:03:45,840 TRACE BasicBinder:65 - binding parameter [1] as [INTEGER] - [3]
+11:03:59,336 DEBUG SQL:103 - select message0_.id as id1_0_0_, message0_.text as text2_0_0_ from message message0_ where message0_.id=?
+11:03:59,346 TRACE BasicBinder:65 - binding parameter [1] as [INTEGER] - [3]
+11:04:40,063 DEBUG SQL:103 - select message0_.id as id1_0_0_, message0_.text as text2_0_0_ from message message0_ where message0_.id=?
+11:04:40,098 TRACE BasicBinder:65 - binding parameter [1] as [INTEGER] - [4]
+11:04:40,153 DEBUG SQL:103 - delete from message where id=?
+11:04:40,155 TRACE BasicBinder:65 - binding parameter [1] as [INTEGER] - [4]
+11:05:01,095 DEBUG SQL:103 - select message0_.id as id1_0_0_, message0_.text as text2_0_0_ from message message0_ where message0_.id=?
+11:05:01,118 TRACE BasicBinder:65 - binding parameter [1] as [INTEGER] - [4]

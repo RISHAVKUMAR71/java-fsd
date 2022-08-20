@@ -18,7 +18,7 @@ public class FindObjectTest {
 
 			txn.begin();
 
-			Message message = session.get(Message.class, 2);
+			Message message = session.get(Message.class, 4);
 
 			System.out.println(message);
 

@@ -42,10 +42,7 @@ public class BookServlet extends HttpServlet {
 		String isbn = request.getParameter("isbn");
 		String pricestr = request.getParameter("price");
 		
-		if (bookname == null || isbn == null || pricestr == null) {
-			// write a response invalid input
-			// return
-		}
+
 			
 		int priceint = Integer.parseInt(pricestr);
 

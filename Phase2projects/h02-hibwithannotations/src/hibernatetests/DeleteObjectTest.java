@@ -16,7 +16,7 @@ public static void main(String[] args) {
 
 			txn.begin();
 
-			Message message = session.get(Message.class, 2);
+			Message message = session.get(Message.class, 4);
 
 			session.delete(message);
 			
