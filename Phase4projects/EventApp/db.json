@@ -1,0 +1,16 @@
+{
+  "employees": [
+    {
+      "id": 1,
+      "fullname": "Sebastian",
+      "email": "sebastian@codingmartway.com"
+    },
+    {
+      "id": 2,
+      "fullname": "Steve",
+      "email": "steve@codingthesmartway.com"
+    }
+ 
+    
+  ]
+}

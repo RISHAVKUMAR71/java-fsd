@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Budget App</title>
+    <link rel="stylesheet" href="./font-awesome/css/all.min.css" />
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <script src="./font-awesome/js/all.min.js"></script>
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/script.js"></script>
+  </head>
+
+  <body style="background-color: black">
+    <script>
+      start_loader();
+    </script>
+    <main>
+      <div class="col-lg-12">
+        <h1 class="fw-bolder text-center" id="project-title">Budget Tracker</h1>
+      </div>
+      <div class="container-fluid w-100">
+        <div class="row">
+          <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+            <div class="card rounded-0 shadow">
+              <div class="card-body">
+                <div class="container-fluid">
+                  <h4 class="text-center fw-bold">Action Fields</h4>
+                  <center>
+                    <hr class="bg-primary border-2 w-25 bg-opacity-100" />
+                  </center>
+                  <dl>
+                    <dt class="fw-bolder">
+                      <i class="fas fa-circle"></i> Click the button below to
+                      update your Wallet Amount
+                    </dt>
+                    <dd class="text-center py-3">
+                      <button
+                        type="button"
+                        id="wallet-btn"
+                        class="btn btn-lg btn-outline-warning rounded-0 btn-block col-lg-8 col-md-10 col-sm-12"
+                      >
+                        <i class="fa fa-wallet"></i> Update Wallet
+                      </button>
+                    </dd>
+                    <dt class="fw-bolder">
+                      <i class="fas fa-circle"></i> Click the button below to
+                      Add Expense
+                    </dt>
+                    <dd class="text-center py-3">
+                      <button
+                        type="button"
+                        id="new-expense-btn"
+                        class="btn btn-lg btn-outline-primary rounded-0 btn-block col-lg-8 col-md-10 col-sm-12"
+                      >
+                        <i class="fa fa-plus"></i> Add Expense
+                      </button>
+                    </dd>
+                  </dl>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+            <div class="card rounded-0 shadow">
+              <div class="card-body">
+                <div id="summary-field">
+                  <div class="row justify-content-center">
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 mb-4">
+                      <div class="card rounded-0 shadow">
+                        <div class="card-body">
+                          <div class="icon-field text-center">
+                            <div
+                              class="d-flex flex-column align-items-center justify-content-center"
+                            >
+                              <div
+                                class="icon-box rounded-0 shadow px-4 py-3 bg-gradient bg-warning w-75 mb-2"
+                              >
+                                <i
+                                  class="fa fa-wallet fs-3 fw-bolder text-dark"
+                                ></i>
+                              </div>
+                              <small><b>Wallet</b></small>
+                            </div>
+                          </div>
+                          <div class="border-top">
+                            <div class="text-field">
+                              <h4 class="text-center mt-3">
+                                <b
+                                  >&#8369;<span class="wallet-amount ms-1"
+                                    >0.00</span
+                                  ></b
+                                >
+                              </h4>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 mb-4">
+                      <div class="card rounded-0 shadow">
+                        <div class="card-body">
+                          <div class="icon-field text-center">
+                            <div
+                              class="d-flex flex-column align-items-center justify-content-center"
+                            >
+                              <div
+                                class="icon-box rounded-0 shadow px-4 py-3 bg-gradient bg-danger bg-opacity-75 w-75 mb-2"
+                              >
+                                <i
+                                  class="fa fa-money-bill-alt fs-3 fw-bolder text-light"
+                                ></i>
+                              </div>
+                              <small><b>Expenses</b></small>
+                            </div>
+                          </div>
+                          <div class="border-top">
+                            <div class="text-field">
+                              <h4 class="text-center mt-3">
+                                <b
+                                  >&#8369;<span class="expense-amount ms-1"
+                                    >0.00</span
+                                  ></b
+                                >
+                              </h4>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 mb-4">
+                      <div class="card rounded-0 shadow">
+                        <div class="card-body">
+                          <div class="icon-field text-center">
+                            <div
+                              class="d-flex flex-column align-items-center justify-content-center"
+                            >
+                              <div
+                                class="icon-box rounded-0 shadow px-4 py-3 bg-gradient bg-light border w-75 mb-2"
+                              >
+                                <i
+                                  class="fa fa-balance-scale fs-3 fw-bolder text-dark"
+                                ></i>
+                              </div>
+                              <small><b>Balance</b></small>
+                            </div>
+                          </div>
+                          <div class="border-top">
+                            <div class="text-field">
+                              <h4 class="text-center mt-3">
+                                <b
+                                  >&#8369;<span class="balance-amount ms-1"
+                                    >0.00</span
+                                  ></b
+                                >
+                              </h4>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+            <div class="card rounded-0 shadow">
+              <div class="card-body">
+                <h4 class="text-center fw-bold">Expense List</h4>
+                <center>
+                  <hr class="bg-primary border-2 w-25 bg-opacity-100" />
+                </center>
+                <div class="list-group" id="expense-list"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <div
+      class="modal fade"
+      id="walletModal"
+      data-bs-backdrop="static"
+      data-bs-keyboard="false"
+      tabindex="-1"
+      aria-labelledby="walletLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content rounded-0">
+          <div class="modal-header">
+            <h5 class="modal-title" id="walletLabel">Update Wallet Amount</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="container-fluid">
+              <form action="" id="wallet-form">
+                <div class="form-group">
+                  <label for="wallet-amount" class="control-label"
+                    >Enter Wallet Amount</label
+                  >
+                  <input
+                    type="number"
+                    min="0"
+                    id="wallet-amount"
+                    class="form-control form-control-lg text-end"
+                    required
+                  />
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="submit"
+              class="btn btn-primary border btn-sm rounded-0"
+              form="wallet-form"
+            >
+              Update Wallet
+            </button>
+            <button
+              type="button"
+              class="btn btn-light border btn-sm rounded-0"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="modal fade"
+      id="addExpenseModal"
+      data-bs-backdrop="static"
+      data-bs-keyboard="false"
+      tabindex="-1"
+      aria-labelledby="addExpenseLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content rounded-0">
+          <div class="modal-header">
+            <h5 class="modal-title" id="addExpenseLabel">
+              <i class="fa fa-plus"></i> New Expense
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="container-fluid">
+              <form action="" id="new-expense-form">
+                <div class="form-group">
+                  <label for="" class="control-label">Enter Expense Name</label>
+                  <input
+                    type="text"
+                    name="expense_name"
+                    class="form-control form-control-lg"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="" class="control-label"
+                    >Enter Expense Amount</label
+                  >
+                  <input
+                    type="number"
+                    min="0"
+                    name="amount"
+                    class="form-control form-control-lg text-end"
+                    required
+                  />
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="submit"
+              class="btn btn-primary border btn-sm rounded-0"
+              form="new-expense-form"
+            >
+              Save Expense
+            </button>
+            <button
+              type="button"
+              class="btn btn-light border btn-sm rounded-0"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="modal fade"
+      id="editExpenseModal"
+      data-bs-backdrop="static"
+      data-bs-keyboard="false"
+      tabindex="-1"
+      aria-labelledby="editExpenseLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content rounded-0">
+          <div class="modal-header">
+            <h5 class="modal-title" id="editExpenseLabel">
+              <i class="fa fa-edit"></i> Edit Expense
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="container-fluid">
+              <form action="" id="edit-expense-form">
+                <input type="hidden" name="id" />
+                <div class="form-group">
+                  <label for="" class="control-label">Enter Expense Name</label>
+                  <input
+                    type="text"
+                    name="expense_name"
+                    class="form-control form-control-lg"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="" class="control-label"
+                    >Enter Expense Amount</label
+                  >
+                  <input
+                    type="number"
+                    min="0"
+                    name="amount"
+                    class="form-control form-control-lg text-end"
+                    required
+                  />
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="submit"
+              class="btn btn-primary border btn-sm rounded-0"
+              form="edit-expense-form"
+            >
+              Save Expense
+            </button>
+            <button
+              type="button"
+              class="btn btn-light border btn-sm rounded-0"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <noscript id="exp-item-clone">
+    <div class="list-group-item">
+      <div class="d-flex align-items-center w-100">
+        <div class="col-6">
+          <p class="m-0 expName text-sm mx-2"></p>
+        </div>
+        <div class="col-3 flex-shrink-1 flex-grow-1">
+          <p class="m-0 text-sm text-end mx-2">
+            <span>&#8369;</span> <span class="expAmount"></span>
+          </p>
+        </div>
+        <div class="col-3 text-center">
+          <button
+            class="btn btn-sm btn-outline-secondary edit-expense"
+            type="button"
+          >
+            <i class="fa fa-edit"></i>
+          </button>
+          <button
+            class="btn btn-sm btn-outline-danger delete-expense"
+            type="button"
+          >
+            <i class="fa fa-trash"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </noscript>
+</html>
